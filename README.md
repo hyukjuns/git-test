@@ -1,3 +1,8 @@
+# 최근 커밋 리셋 및 github 반영
+```
+git reset HEAD^
+git push -f origin main
+```
 # log / restore / revert
 ```
 # commit log
