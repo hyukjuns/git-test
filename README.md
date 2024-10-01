@@ -2,6 +2,7 @@
 ```markdown
 # conflict
 git merge BRANCH 후 특정 내용 충돌 시 필요한 내용만 남기고 git add & git commit (메시지 없이) 수행
+혹은 git merge --abort 로 머지 작업 취소
 
 # oh-my-zsh alias
 gaa # git add -A
