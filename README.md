@@ -34,6 +34,8 @@ git branch  --list # 브랜치 목록
 git merge BRANCH # 타겟 브랜치를 현재 브랜치로 머지
 
 # 3-way merge
+git merge BRANCH
+ git merge --no-ff
 메인과 브랜치를 비교해서 merge (가장 일반적인 merge)
 
 # fast-forward merge
