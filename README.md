@@ -16,14 +16,13 @@ git push -f origin main
 # commit log
 git log
 git log --oneline
-git log --oneline --graph
 
 # reset / revert / restore
 git reset COMMIT_ID # 이전 상태로 되돌리기, 커밋 이력 삭제
 git revert COMMIT_ID # 이전 상태로 되돌리기, 커밋 이력 유지, 신규 revert 커밋 이력 생성
 git revert HEAD # 최근 커밋 1개 제거
 git restore FILE # 파일 1개에 대한 실행취소, 복구
-git restore --source COMMIT_ID FILE # 특정 커밋 시점으로 파일 복구
+git restore --source COMMIT_ID FILE # 파일 1개에 대한 실행취소, 복구
 git restore --staged FILE # 특정 파일 스테이징 취소
 
 # branch / merge
