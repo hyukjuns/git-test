@@ -35,18 +35,26 @@ git branch  --list # 브랜치 목록
 git merge BRANCH # 타겟 브랜치를 현재 브랜치로 머지
 
 # 3-way merge
-git merge BRANCH
-git merge --no-ff BRANCH
-메인과 브랜치를 비교해서 merge (가장 일반적인 merge)
+각 브랜치에 신규 커밋이 있을 경우 병합할 브랜치들의 코드를 비교하고 합쳐서 새로운 커밋을 생성, 가장 일반적인 merge
+- git merge BRANCH
+- git merge --no-ff BRANCH # 강제
 
 # fast-forward merge
-메인에 변경사항(신규커밋)이 없을떄 브랜치의 커밋과 비교할게 없으므로, 브랜치의 커밋을 메인의 최신 커밋이 되도록 merge 하는 방식
+병합의 기분이 되는 메인브랜치에 신규커밋이 없을떄는
+신규브랜치와 메인브랜치의 커밋을 비교하지 않아도 되므로, 
+신규브랜치의 커밋을 메인브랜치의 최신 커밋이 되도록 병합 하는 방식
+- git merge BRANCH
 
 # rebase and merge
-git switch 
-브랜치의 시작점을 메인 브랜치(다른 브랜치)의 최신 커밋 다음으로 이어붙이고 fast-forward merge (강제 fast-forward merge)
+신규브랜치의 시작점을 메인브랜치의 최신 커밋 다음으로 이어붙힘
+그 상태에서 fast-forward merge 즉, 강제 fast-forward merge
+순서
+1. git switch BRANCH
+2. git rebase main
+3. git switch main
+4. git merge BRANCH
 
 # squash and merge
-브랜치의 모든 커밋 로그를 가져오지 않고 코드 변경사항만 메인으로 merge
-(브랜치의 수많은 커밋을 하나의 커밋으로 새로 만들어서 메인 브랜치에 옮겨올 수 있음)
+메인브랜치로 병합시 신규브랜치의 모든 커밋을 가져오지 않고 모든 변경사항을 하나의 커밋으로 가져와서 메인브랜치와 병합시킴
+- git merge --squash BRANCH
 ```
