@@ -29,19 +29,21 @@ git restore --staged FILE # 특정 파일 스테이징 취소
 # branch / merge
 git switch -c BRANCH # 브랜치 생성 및 이동
 git switch BRANCH # 브랜치 이동
-git branch -d BRANCH # 브랜치 제거
+git branch -d BRANCH # Merge된 브랜치 제거
+git branch -D BRANCH # Merge되지 않은 브랜치 제거
 git branch  --list # 브랜치 목록
 git merge BRANCH # 타겟 브랜치를 현재 브랜치로 머지
 
 # 3-way merge
 git merge BRANCH
- git merge --no-ff
+git merge --no-ff BRANCH
 메인과 브랜치를 비교해서 merge (가장 일반적인 merge)
 
 # fast-forward merge
 메인에 변경사항(신규커밋)이 없을떄 브랜치의 커밋과 비교할게 없으므로, 브랜치의 커밋을 메인의 최신 커밋이 되도록 merge 하는 방식
 
 # rebase and merge
+git switch 
 브랜치의 시작점을 메인 브랜치(다른 브랜치)의 최신 커밋 다음으로 이어붙이고 fast-forward merge (강제 fast-forward merge)
 
 # squash and merge
